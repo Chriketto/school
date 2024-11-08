@@ -1,31 +1,28 @@
-let value1;
-let value2;
-let operatore;
-function getValues() {
-    value1 = parseFloat(document.getElementById("value1").value)
-    value2 = parseFloat(document.getElementById("value2").value)
+let calcolo = "";
+
+function setValore(value) {
+    calcolo+=value
+    document.getElementById("valore").value = calcolo
 }
-function add() {
-    operatore = "+"
+
+function cancella() {
+    calcolo = ""
+    document.getElementById("valore").value = calcolo
 }
-function sott() {
-    operatore = "-"
-}
-function molt() {
-    operatore = "*"
-}
-function divi() {
-    operatore = "/"
-}
-function calcolo() {
-    getValues()
-    if (operatore == "+") {
-        document.getElementById("result").innerHTML = String(value1 + " + " + value2 + " = " + parseFloat(value1+value2))
-    } else if (operatore == "-") {
-        document.getElementById("result").innerHTML = String(value1 + " - " + value2 + " = " + parseFloat(value1-value2))
-    } else if (operatore == "*") {
-        document.getElementById("result").innerHTML = String(value1 + " * " + value2 + " = " + parseFloat(value1*value2))
-    } else if (operatore == "/") {
-        document.getElementById("result").innerHTML = String(value1 + " / " + value2 + " = " + parseFloat(value1/value2))
+
+function calc() {
+    calcolo = document.getElementById("valore").value
+    
+    for (let i=0; i<calcolo.length;i++) {
+        if (calcolo[i] == '+') {
+            calcolo = String(parseFloat(calcolo.substring(0, i)) + parseFloat(calcolo.substring(i+1, calcolo.length)))
+        } else if (calcolo[i] == '-') {
+            calcolo = String(parseFloat(calcolo.substring(0, i)) - parseFloat(calcolo.substring(i+1, calcolo.length)))
+        } else if (calcolo[i] == '*') {
+            calcolo = String(parseFloat(calcolo.substring(0, i)) * parseFloat(calcolo.substring(i+1, calcolo.length)))
+        } else if (calcolo[i] == '/') {
+            calcolo = String(parseFloat(calcolo.substring(0, i)) / parseFloat(calcolo.substring(i+1, calcolo.length)))
+        }
+        document.getElementById("valore").value = calcolo
     }
 }
