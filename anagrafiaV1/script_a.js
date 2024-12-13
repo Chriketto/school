@@ -3,11 +3,11 @@ let i=0;
 
 function salvaDati(){
     let dati=[nome,cognome,citta,indirizzo,mail]
-    dati.nome=document.getElementById("nome").value;
-    dati.cognome=document.getElementById("cognome").value;
-    dati.citta=document.getElementById("citta").value;
-    dati.indirizzo=document.getElementById("indirizzo").value;
-    dati.mail=document.getElementById("mail").value;
+    nome=document.getElementById("nome").value;
+    cognome=document.getElementById("cognome").value;
+    citta=document.getElementById("citta").value;
+    indirizzo=document.getElementById("indirizzo").value;
+    mail=document.getElementById("mail").value;
 
 
     tabella.push(dati);
