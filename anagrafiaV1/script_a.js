@@ -2,7 +2,7 @@ let tabella=[]
 let i=0;
 
 function salvaDati(){
-    let dati={nome:"", cognome:"",citta:"",indirizzo:"",mail:""}
+    let dati=[nome,cognome,citta,indirizzo,mail]
     dati.nome=document.getElementById("nome").value;
     dati.cognome=document.getElementById("cognome").value;
     dati.citta=document.getElementById("citta").value;
