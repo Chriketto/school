@@ -2,12 +2,14 @@ let tabella=[]
 let i=0;
 
 function salvaDati(){
+    
+    let nome=document.getElementById("nome").value;
+    let cognome=document.getElementById("cognome").value;
+    let citta=document.getElementById("citta").value;
+    let indirizzo=document.getElementById("indirizzo").value;
+    let mail=document.getElementById("mail").value;
+
     let dati=[nome,cognome,citta,indirizzo,mail]
-    nome=document.getElementById("nome").value;
-    cognome=document.getElementById("cognome").value;
-    citta=document.getElementById("citta").value;
-    indirizzo=document.getElementById("indirizzo").value;
-    mail=document.getElementById("mail").value;
 
 
     tabella.push(dati);
