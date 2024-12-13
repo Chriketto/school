@@ -15,7 +15,7 @@ function salvaDati(){
     tabella.push(dati);
     i++;
 
-    alert(tabella);
+   localStorage.setItem("anag",tabella);
 
     
 
