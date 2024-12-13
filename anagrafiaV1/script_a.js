@@ -13,6 +13,8 @@ function salvaDati(){
     tabella.push(dati);
     i++;
 
+    alert(tabella);
+
     
 
     document.getElementById("nome").value="";
