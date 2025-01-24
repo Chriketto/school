@@ -1,0 +1,10 @@
+body{
+    align-items: center;
+    text-align: center;
+    background-color: rgb(233, 221, 206);
+}
+
+h1{
+    color:red;
+    padding-bottom: 8px;
+}
