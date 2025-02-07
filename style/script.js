@@ -20,9 +20,6 @@ function readFile(input) {
 }
 
 function draw() {
-    if (!result.length) {
-        alert("Inserire file!")
-    } else {
         let c = document.getElementById("canva");
         var w = c.width;
         var h = c.height;
@@ -78,7 +75,7 @@ function draw() {
             ctx.stroke()
         }
         ctx.stroke()
-    }
+    
 }
 
 function getPow(numb) {
