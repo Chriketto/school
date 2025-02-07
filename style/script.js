@@ -33,11 +33,10 @@ function draw() {
         ctx.fillStyle = "#FFE62D"
         
 
-        // Draw y axis
+        
         ctx.moveTo(w/15, h/12);
-        ctx.lineTo(w/15, h/1.1); // h/1.15
-        // Draw x axis
-        ctx.moveTo(w/20, h/15*13); //w/15
+        ctx.lineTo(w/15, h/1.1);
+        ctx.moveTo(w/20, h/15*13);
         ctx.lineTo(w/1.05, h/15*13);
 
         let csv = result.split("\n")
@@ -53,8 +52,6 @@ function draw() {
         for (let i in csv) {
             if (i!=0) {
                 let effData = csv[i].split(",")
-
-                //Fill x axes
                 ctx.moveTo(w/15+divisoreX*i,h/15*13)
                 ctx.lineTo(w/15+divisoreX*i, h/30*27)
                 ctx.fillText(effData[0].replaceAll('"', ''), w/15+divisoreX*i+2, h/30*27+2);
@@ -67,34 +64,22 @@ function draw() {
 
         let newMax = ((Number(max.toString()[0])+1) * (10**(getPow(max)-1))) 
         for (let i of Array(yDivisor).keys()) {
-            // Fill y axes
             ctx.moveTo(w/15, h/15*12-(divisoreY*i)/3)
             ctx.lineTo(w/15-30, h/15*12-(divisoreY*i)/3)
             ctx.fillText((newMax/yDivisor)*(i+1), w/15-50, (h/15*12-(divisoreY*i)/3)-5)
         }
         ctx.stroke()
-        
-        // Start from origin
         ctx.moveTo(w/15,h/1.155)
 
-        // Draw the function
         for (let i in csv) {
             i++
             let effData = csv[i].split(",")
-            //alert(Number(effData[1].replaceAll('"', '')) / (newMax/yDivisor))
             ctx.lineTo(w/15+divisoreX*i, h/1.155 - 45*(Number(effData[1].replaceAll('"', '')) / (newMax/yDivisor)), ctx)
             ctx.stroke()
-            // drawPoint(w/15+divisoreX*i, h/1.155 - 45*(Number(effData[1].replaceAll('"', '')) / (newMax/yDivisor)), ctx)
         }
         ctx.stroke()
     }
 }
-
-// function drawPoint(x, y, canvas){
-//     canvas.beginPath();
-//     canvas.arc(x, y, 3, 0, 2 * Math.PI, true);
-//     canvas.stroke();
-// }
 
 function getPow(numb) {
     return(Number(numb.toString().length))
